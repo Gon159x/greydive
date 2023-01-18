@@ -9,12 +9,16 @@ import 'firebase/firestore';
 import React from 'react';
 import { collection, query, where, getDocs } from "firebase/firestore";
 
+alert('Esta pagina es web responsive')
+
 function App() {
 
   const [database, setDatabase] = React.useState(null)
+  const [showed , setShowed] = React.useState(false)
+
+
 
   React.useEffect(() => {
-
     const firebaseConfig = {
       apiKey: "AIzaSyAwQHEGT7xtHpQpM1KL2eOPTcuTUiFovms",
       authDomain: "base-de-datos-e6a80.firebaseapp.com",
@@ -31,6 +35,9 @@ function App() {
     const analytics = getAnalytics(app);
     const auxDatabase = getFirestore(app);
     setDatabase(auxDatabase)
+
+    
+
   },[])
 
 
