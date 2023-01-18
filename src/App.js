@@ -1,23 +1,45 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './Components/Form/Form.jsx'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import {  getFirestore } from "firebase/firestore";
+import { Routes , Route } from 'react-router-dom'
+import 'firebase/firestore';
+import React from 'react';
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 function App() {
+
+  const [database, setDatabase] = React.useState(null)
+
+  React.useEffect(() => {
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAwQHEGT7xtHpQpM1KL2eOPTcuTUiFovms",
+      authDomain: "base-de-datos-e6a80.firebaseapp.com",
+      projectId: "base-de-datos-e6a80",
+      storageBucket: "base-de-datos-e6a80.appspot.com",
+      messagingSenderId: "1075856020272",
+      appId: "1:1075856020272:web:cb7145d6feadff20d5aef5",
+      measurementId: "G-06EQNTP49F"
+    };
+  
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auxDatabase = getFirestore(app);
+    setDatabase(auxDatabase)
+  },[])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path = '/' element ={<Form readOnly={false} database={database}/>} />
+        <Route path = '/form/:id' element = {<Form readOnly={true} database={database}/>}/>
+      </Routes>
     </div>
   );
 }

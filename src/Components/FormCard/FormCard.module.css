@@ -1,0 +1,70 @@
+@font-face {
+    font-family: 'Lato';
+    src:url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto+Slab&display=swap') format('truetype');
+}
+
+.formCard{
+    width: 50vw;
+    height: auto;
+    background-image: linear-gradient(to right,rgb(9, 13, 19),rgb(32,36,41));
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 16px;
+    padding-top: 32px;
+}
+
+.gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #a1864a, #9f804b);
+    font-weight: 600 !important;
+    font-family: 'Lato', sans-serif;
+    padding: 0.5vh;
+}
+
+.selectForm{
+    width:30.5vw;
+}
+
+.inputs{
+    background-color:#2d2f33;
+    color:#a1864a;
+    
+}
+
+.submitButton{
+    width: 60%;
+    border: solid rgba(255, 255, 255, 0.363) !important;
+    font-weight: 700 !important;
+}
+
+.submitButton:hover{
+    border: solid #9f804b !important;
+    transition-duration: 0.1s;
+}
+
+.submitButton:active{
+    border: solid white !important;
+}
+  
+
+
+  
+
+@media (height < 800px ) {
+    .formCard{
+        height: 140vh;
+    }
+
+}
+
+@media (width < 1070px ) {
+    .formCard{
+        width: 80vw;
+    }
+
+}

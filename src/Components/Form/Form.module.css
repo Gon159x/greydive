@@ -1,0 +1,23 @@
+.formulary{
+    width: 98vw;
+    height: 180vh;
+    background-color: black;
+    background-image: url('../../img/backgroundFinalFinal.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+
+@media (height < 800px ) {
+    .formulary{
+        height: 180vh;
+    }
+
+}
+
